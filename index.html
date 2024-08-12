@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="scroll-smooth"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- google font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- ionicons cdn -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- alpine js cdn -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/dist/output.css">
+    <style type="text/tailwindcss">
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-red-400 via-gray-300 to-blue-500">
+    
+
+<!-- ====== header ====== -->
+<header x-data="{navbarOpen: false}" class="sticky left-0 top-0 z-50 bg-white/10 backdrop-blur-sm w-full">
+    <div class="mx-auto h-[90px] max-w-7xl px-8 md:px-6">
+        <div class="relative flex h-full items-center justify-between border-b border-slate-500/10">
+            <!-- logo -->
+            <div class="w-[15rem] max-w-full">
+                <a href="#">
+                    <img src="images/logo2.png" alt="logo" class="w-full">
+                </a>
+            </div>
+
+            <!-- menu -->
+            <div class="flex w-full items-center justify-between">
+                <nav x-transition :class="!navbarOpen && 'hidden'" id="navbarCollapse" class="absolute right-0 top-[90px] w-full max-w-[350px] rounded-lg border border-blue-200 bg-white py-5 px-6 shadow-lg shadow-blue-400/5 transition-all lg:static lg:block lg:max-w-full lg:border-none lg:shadow-none lg:bg-transparent lg:px-0 lg:py-0">
+                    <ul class="flex flex-col justify-center gap-8 lg:flex-row">
+                        <li class="relative hover:text-blue-600 cursor-pointer ">
+                            <a href="#" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Home</a>
+                        </li>
+
+
+                        <li class="relative hover:text-blue-600 cursor-pointer
+                        ">
+                            <a href="#S2" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Projects</a>
+                        </li>
+
+
+                        <li class="relative hover:text-blue-600 cursor-pointer 
+                        ">
+                            <a href="#S3" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">About Me</a>
+                        </li>
+
+                        <li>
+                            <a href="#S4" class="lg:hidden text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- menu btn -->
+            <div class="flex">
+                <a href="#S4" class="mr-10 hidden rounded-md bg-blue-500 px-8 py-2.5 font-semibold  text-white shadow-md shadow-blue-500/20 duration-200 hover:bg-blue-600 sm:block lg:mr-0">Contact</a>
+
+                <button @click="navbarOpen = !navbarOpen" :class="navbarOpen && 'navbarTogglerActive'" id="navbarToggler" class="block lg:hidden">
+                    <ion-icon name="menu-outline" class="text-4xl text-blue-500"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ====== END header ====== -->
+
+
+<!-- ====== hero ====== -->
+
+<section id="S1" class="relative py-16 min-h-screen lg:pt-[80px]">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <div class="flex flex-wrap">
+            <div class="w-full lg:w-5/12 lg:mt-[65px]">
+                <h1 class="text-slate-800 mb-3 text-4xl font-bold leading-snug sm:text-[42px] lg:text-[40px] xl:text-[42px]">Hello, <br> I'm Restu Fauzi<br>
+                    <span class="animText text-blue-600"><br></span></h1>
+                <p class="text-slate-700 mb-8 max-w-[480px] text-base">Currently,<br> I am an active student at University of Amikom Yogyakarta.</p>
+                
+                <a target="_blank" rel="noopener noreferrer" href="images/CV.pdf" download='Restu Fauzi-CV' class="w-full rounded-md bg-blue-500 px-8 py-2.5 font-semibold text-white shadow-md shadow-blue-500/20 hover:bg-blue-600 duration-200 sm:w-auto">Download CV</a>
+            </div>
+
+            <div class="hidden px-4 lg:block lg:w-1/12"></div>
+
+            <div class="w-full px-4 lg:w-6/12">
+                <div class="lg:ml-auto lg:text-right">
+                    <div class="relative z-10 inline-block pt-11 lg:pt-0">
+                        <img src="images/hero.png" alt="hero section img" class="max-w-full lg:ml-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== END hero ====== -->
+
+<!-- Projects Starts -->
+
+<section id="S2" class="py-16 min-h-screen lg:pt-[100px]">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <!-- heading text -->
+        <div class="mb-10 text-left">
+            <h1 class="text-2xl text-center font-bold text-slate-700 sm:text-3xl">Recent Project</h1>
+            <p class="mx-auto max-w-full mt-2 text-center text-base text-slate-700">Find out all of my projects, <a target="_blank" href="" class="text-lg font-medium text-slate-700 duration-200 hover:text-blue-600 lg:text-base hover:underline">click here!</a></p>
+
+        </div>
+        <!-- wrapper -->
+        <div class="flex flex-col gap-5">
+            <!-- col-1 -->
+            <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/gif1.gif" alt="" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p target="_blank" href="#" class="text-sm font-semibold text-white">English Plus UI/UX<span class="text-xs text-slate-300 block">College Project</span></p>
+                    </div>
+                </div>
+
+                <!-- col-2 -->
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/gif2.gif" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">New College Student UI/UX<span class="text-xs text-slate-300 block">College Project</span></p>
+                    </div>
+                </div>
+
+                <!-- col-3 -->
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/gif3.gif" alt="" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p target="_blank" href="#" class="text-sm font-semibold text-white">Smart Home UI/UX<span class="text-xs text-slate-300 block">College Project</span></p>
+                    </div>
+                </div>
+
+                <!-- col-4 -->
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/gif4.gif" alt="portfolio img" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Landing Page<span class="text-xs text-slate-300 block">College Project</span></p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end col-1 -->
+
+            <!-- col-2 -->
+            <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52 md:col-span-2">
+                    <img src="images/img2.jpg" alt="" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Project Coming Soon<span class="text-xs text-slate-300 block">In Progress</span></p>
+                    </div>
+                </div>
+                <div class="group relative h-40 overflow-hidden rounded-lg lg:h-52">
+                    <img src="images/gif5.gif" alt="" class="absolute h-full w-full object-cover duration-200 group-hover:scale-125">
+                    <div class="absolute -bottom-60 flex w-full cursor-pointer items-center justify-between bg-gradient-to-t from-slate-800 px-3 pb-4 pt-10 duration-200 group-hover:-bottom-0">
+                        <p class="text-sm font-semibold text-white">Big Data Predictive Analytics<span class="text-xs text-slate-300 block">College Project</span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- end col-2 -->
+
+            <!-- col-3 -->
+    
+        </div>
+    </div>
+</section>
+
+<!-- Projects Ends -->
+
+<!-- About Me Starts -->
+
+<section id="S3" class="py-16 lg:pt-[120px]">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <div class="md:flex md:justify-between md:gap-6">
+            <div class="md:w-6/12">
+                 <!-- heading text -->
+                <div class="mb-5 sm:mb-10">
+                    <span class="text-2xl font-bold text-blue-500">About Me</span>
+                    <h1 class="text-2xl font-bold text-slate-700 sm:text-3xl">Creative, Optimistic and Enthusiastic</h1>
+                </div>
+                <p class="text-slate-700 mb-6">Some skills that I have. Keep learning and improving myself so that I can contribute to the progress of our nation, no matter how small the impact.</p>
+                <ul>
+                    <li class="mb-6 flex items-center">
+                        <div class="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                            <ion-icon name="briefcase-outline"></ion-icon>
+                        </div>
+                        <p class="ml-4 max-w-md font-medium text-slate-600">I've created a UI/UX using Figma for my college project.</p>
+                    </li>
+                    <li class="mb-6 flex items-center">
+                        <div class="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </div>
+                        <p class="ml-4 max-w-md font-medium text-slate-600">I am also a little proficient with HTML, CSS, Tailwind CSS in creating website frontends with a touch of JavaScript</p>
+                    </li>
+                    <li class="mb-6 flex items-center">
+                        <div class="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                            <ion-icon name="mail-unread-outline"></ion-icon>
+                        </div>
+                        <p class="ml-4 max-w-md font-medium text-slate-600">I can do switching, routing and subnetting in a local network. Have passed CCNA1 and CCNA2.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- about img -->
+            <div class="mt-8 flex justify-center md:mt-0 md:w-5/12">
+                <img src="images/about.png" alt="about img" class="max-h-[500px] md:max-h-max">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- About Me Ends -->
+
+ <!-- ====== Contact ====== -->
+ <section id="S4" class="relative overflow-hidden py-16 min-h-screen lg:pt-[120px]">
+    <img src="images/effect.png" alt="effect" class="absolute bottom-[-400px] -z-10 w-full opacity-[0.2]">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <div class="-mx-4 flex flex-wrap lg:justify-between">
+
+            <!-- left info-->
+            <div class="w-full px-4 md:w-1/2 xl:w-6/12">
+                <div class="mb-12 max-w-[570px] lg:mb-0">
+                    <span class="font-medium text-blue-500">Contact Me</span>
+                    <h1 class="mb-3 text-2xl font-bold text-slate-700 sm:text-3xl">GET IN TOUCH WITH ME</h1>
+                    <p class="text-slate-500 mb-8">This is the information you can use to contact me</p>
+                    
+                    
+                    <!-- address -->
+                    <div class="mb-8 flex w-full max-w-[420px] items-center rounded-lg bg-white p-4 shadow-md shadow-blue-500/10">
+                        <div class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-blue-500 bg-opacity-5 text-blue-500 sm:h-[70px] sm:max-w-[70px]">
+                            <ion-icon name="location-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <div class="w-full">
+                            <h4 class="mb-1 text-xl font-bold text-slate-700">My Location</h4>
+                            <p class="text-base text-slate-400
+                            ">55281 Depok, Sleman, Yogyakarta.</p>
+                        </div>
+                    </div>
+                    <!-- phone -->
+                    <div class="mb-8 flex w-full max-w-[420px] items-center rounded-lg bg-white p-4 shadow-md shadow-blue-500/10">
+                        <div class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-blue-500 bg-opacity-5 text-blue-500 sm:h-[70px] sm:max-w-[70px]">
+                            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <div class="w-full">
+                            <h4 class="mb-1 text-xl font-bold text-slate-700">Phone Number</h4>
+                            <p class="text-base text-slate-400
+                            ">(+62)822 4101 5042</p>
+                        </div>
+                    </div>
+                    <!-- mail -->
+                    <div class="mb-8 flex w-full max-w-[420px] items-center rounded-lg bg-white p-4 shadow-md shadow-blue-500/10">
+                        <div class="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-blue-500 bg-opacity-5 text-blue-500 sm:h-[70px] sm:max-w-[70px]">
+                            <ion-icon name="mail-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <div class="w-full">
+                            <h4 class="mb-1 text-xl font-bold text-slate-700">Email Address</h4>
+                            <p class="text-base text-slate-400
+                            ">restufauzi839@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- right contact-->
+            <div class="w-full px-4 pt-11 md:w-1/2 xl:w-5/12">
+                <div class="relative rounded-lg bg-white/90 p-8 shadow-lg shadow-blue-500/10 sm:p-12">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <div class="mb-6">
+                            <input type="hidden" name="access_key" value="af82b02d-917c-4363-9ef7-f3ec1a282f85">
+                            <input type="text" name="name" placeholder="Your Name" class="w-full rounded-lg border border-blue-500/20 px-4 py-3 text-slate-500 focus:border-blue-500 focus:outline-none" required>
+                        </div>
+                        <div class="mb-6">
+                            <input type="email" name="email" placeholder="Your Email" class="w-full rounded-lg border border-blue-500/20 px-4 py-3 text-slate-500 focus:border-blue-500 focus:outline-none" required>
+                        </div>
+                        <div class="mb-6">
+                            <textarea name="message" placeholder="Your Message" rows="6" class="resize-none w-full rounded-lg border border-blue-500/20 px-4 py-3 text-slate-500 focus:border-blue-500 focus:outline-none" required></textarea>
+                        </div>
+                        <div class="">
+                            <button type="submit" class="w-full rounded border border-blue-300 bg-blue-500 p-3 text-white transition-all hover:bg-opacity-90">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ====== footer ====== -->
+
+<footer class="bg-gradient-to-b from-gray-700 via-gray-900 to-black mt-auto">
+    <div class="mx-auto max-w-7xl px-8 md:px-6">
+        <div class="flex flex-col justify-between py-8 sm:flex-row">
+            <p class="text-sm text-slate-500">© Copyright 2022 <a href="#" class="text-slate-700 hover:text-blue-500"> Restu Fauzi</a> All rights reserved.</p>
+            <div class="mt-4 flex items-center space-x-4 sm:mt-0">
+                <a href="#">
+                    <ion-icon name="logo-facebook" class="text-2xl text-slate-500 hover:text-blue-500 duration-300"></ion-icon>
+                </a>
+                <a href="#">
+                    <ion-icon name="logo-twitter" class="text-2xl text-slate-500 hover:text-blue-500 duration-300"></ion-icon>
+                </a>
+                <a href="#">
+                    <ion-icon name="logo-youtube" class="text-2xl text-slate-500 hover:text-blue-500 duration-300"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ====== END footer ====== -->
+
+    <!-- Element to contain animated typing -->
+
+
+  <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+  <script>
+    const typed = new Typed('.animText', {
+      strings: ['Creative', 'Optimistic','Enthusiastic'],
+      typeSpeed: 60,
+      backSpeed: 60,
+      backDelay: 1000,
+      loop: true
+    });
+  </script>
+</body>
+</body>
+</html>
